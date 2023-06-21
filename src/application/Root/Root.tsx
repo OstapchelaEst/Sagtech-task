@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Layout } from '../../components/Layout'
 import { Exchanger } from '../../pages/Exchanger'
 import { Home } from '../../pages/Home'
 import { exchange, home } from '../../utils/NavigationMap'
@@ -9,14 +10,19 @@ export const Root = () => {
     <BrowserRouter>
       <Routes>
         <Route
-          index
           path={home()}
-          element={<Home />}
-        />
-        <Route
-          path={exchange()}
-          element={<Exchanger />}
-        />
+          element={<Layout />}
+        >
+          <Route
+            index
+            path={home()}
+            element={<Home />}
+          />
+          <Route
+            path={exchange()}
+            element={<Exchanger />}
+          />
+        </Route>
       </Routes>
     </BrowserRouter>
   )

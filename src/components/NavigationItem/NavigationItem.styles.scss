@@ -1,0 +1,47 @@
+@import '../../theme/theme.scss';
+
+.navigation-item {
+  text-align: center;
+  font-weight: 600;
+  line-height: 3rem;
+  font-size: 3rem;
+  color: $blue;
+
+  & a {
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 110%;
+      height: 0.3rem;
+      background-color: $orange;
+      border-radius: 0.2rem;
+      bottom: 0rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(150%);
+      opacity: 0;
+      transition: all 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0%);
+        }
+        color: $orange;
+      }
+    }
+
+    &.active {
+      color: $orange;
+      &::after {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0%);
+      }
+    }
+  }
+}
