@@ -1,0 +1,9 @@
+@import '../../theme/theme.scss';
+
+.currency-item {
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  border: 0.3rem solid $blue;
+  border-radius: 0.6rem;
+  text-align: center;
+}

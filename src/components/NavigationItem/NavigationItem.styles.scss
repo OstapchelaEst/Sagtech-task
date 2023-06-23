@@ -11,6 +11,7 @@
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
     position: relative;
+    outline-color: $orange;
 
     &::after {
       content: '';

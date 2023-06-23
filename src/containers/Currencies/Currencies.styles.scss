@@ -1,0 +1,13 @@
+.currency-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (max-width: 80rem) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (max-width: 55rem) {
+    grid-template-columns: 1fr;
+  }
+}

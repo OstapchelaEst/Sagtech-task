@@ -1,0 +1,10 @@
+.last-time-update {
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 3rem;
+  margin-bottom: 1.5rem;
+  & span {
+    font-weight: 600;
+  }
+}

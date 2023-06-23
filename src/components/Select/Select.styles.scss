@@ -1,0 +1,14 @@
+@import '../../theme/theme.scss';
+
+.custom-select {
+  &__select {
+    border: 0.4rem solid $blue;
+    border-radius: 1rem;
+    outline-color: $orange;
+    padding: 0.5rem 1rem;
+    display: block;
+    min-width: 20rem;
+    max-width: 30rem;
+    width: 100%;
+  }
+}
