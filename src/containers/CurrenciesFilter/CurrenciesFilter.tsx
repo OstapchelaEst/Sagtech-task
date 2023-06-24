@@ -24,7 +24,7 @@ export const CurrenciesFilter = ({
     setValue(value)
     const filteredCosts = getFilteredCurrencies(
       costs,
-      value.toLocaleLowerCase()
+      value
     )
     setCosts(filteredCosts)
   }
