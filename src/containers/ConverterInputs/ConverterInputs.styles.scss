@@ -1,0 +1,15 @@
+.converter-inputs {
+
+  &__error-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  &__switcher-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    & button {
+      margin-right: 2.5rem;
+    }
+  }
+}

@@ -4,11 +4,16 @@
   &__select {
     border: 0.4rem solid $blue;
     border-radius: 1rem;
-    outline-color: $orange;
     padding: 0.5rem 1rem;
     display: block;
     min-width: 20rem;
     max-width: 30rem;
     width: 100%;
+    outline-style: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:focus {
+      border-color: $orange;
+    }
   }
 }

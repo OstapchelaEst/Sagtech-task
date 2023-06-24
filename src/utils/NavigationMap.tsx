@@ -1,4 +1,4 @@
 const home = () => '/'
-const exchange = () => '/exchange'
+const converter = () => '/converter'
 
-export { home, exchange }
+export { home, converter }

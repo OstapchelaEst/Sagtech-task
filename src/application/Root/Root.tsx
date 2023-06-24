@@ -1,11 +1,12 @@
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Layout } from '../../components/Layout'
-import { Exchanger } from '../../pages/Exchanger'
+import { Converter } from '../../pages/Converter'
+
 import { Home } from '../../pages/Home'
 import { getCurrenciesNamesThunk } from '../../store/actions/getCurrenciesThunk'
 import { setupStore } from '../../store/store'
-import { exchange, home } from '../../utils/NavigationMap'
+import { converter, home } from '../../utils/NavigationMap'
 import '../GlobalStyles/GlobalStyles.scss'
 
 const store = setupStore()
@@ -26,8 +27,8 @@ export const Root = () => {
               element={<Home />}
             />
             <Route
-              path={exchange()}
-              element={<Exchanger />}
+              path={converter()}
+              element={<Converter />}
             />
           </Route>
         </Routes>

@@ -1,0 +1,35 @@
+@import '../../theme/theme.scss';
+
+.converter-input {
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    text-align: center;
+  }
+  &__wrapper {
+    box-shadow: inset 0 0 0 0.5rem $blue;
+    border-radius: 1rem;
+    display: flex;
+    & input {
+      width: 25rem;
+    }
+    & select {
+      min-width: 8.2rem;
+      width: 8.2rem;
+    }
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__input {
+    min-width: 20rem;
+    outline: none;
+    background-color: $blueWithOpacity;
+    border-radius: 1rem;
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $blue;
+  }
+}

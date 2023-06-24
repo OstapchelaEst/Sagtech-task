@@ -1,9 +1,9 @@
-import { exchange, home } from '../../utils/NavigationMap'
+import { converter, home } from '../../utils/NavigationMap'
 import { NavigationItem } from '../NavigationItem'
 import './Navigation.styles.scss'
 
 const NAVIGATION_RESOURCE_ROUTE_HOME_TITLE = 'Home'
-const NAVIGATION_RESOURCE_ROUTE_EXCHANGE_TITLE = 'Exchange'
+const NAVIGATION_RESOURCE_ROUTE_EXCHANGE_TITLE = 'Converter'
 
 export const Navigation = () => {
   return (
@@ -15,7 +15,7 @@ export const Navigation = () => {
             title={NAVIGATION_RESOURCE_ROUTE_HOME_TITLE}
           />
           <NavigationItem
-            route={exchange()}
+            route={converter()}
             title={NAVIGATION_RESOURCE_ROUTE_EXCHANGE_TITLE}
           />
         </ul>
