@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { CurrenciesList } from '../../components/CurrenciesList'
 import { Error } from '../../components/Error'
 import { LastTimeUpdate } from '../../components/LastTimeUpdate'
@@ -33,24 +33,35 @@ export const Currencies = () => {
   const [date, setDate] = useState<string | number>(Date.now())
   const [errorMessage, setErrorMessage] = useState<string>('')
 
-  const getCurrencies = async (currency: string) => {
-    try {
-      dispatch(startLoading())
-      const response = await getCurrenciesCosts(currency)
-      const validCosts = getValidCurrencyList(response.rates)
-      setDate(response.updated_date)
-      setCosts(validCosts)
-      setFilteredCosts(getFilteredCurrencies(validCosts, filterValue))
-      dispatch(endLoading())
-    } catch (error) {
-      dispatch(endLoading())
-      setErrorMessage(RESOURCE_CURRENCIES_ERROR_MESSAGE)
-    }
-  }
+  const getCurrencies = useCallback(
+    async (currency: string) => {
+      try {
+        dispatch(startLoading())
+        const response = await getCurrenciesCosts(currency)
+        const validCosts = getValidCurrencyList(response.rates)
+        setDate(response.updated_date)
+        setCosts(validCosts)
+        setFilteredCosts(getFilteredCurrencies(validCosts, filterValue))
+        dispatch(endLoading())
+      } catch (error) {
+        dispatch(endLoading())
+        setErrorMessage(RESOURCE_CURRENCIES_ERROR_MESSAGE)
+      }
+    },
+    [
+      dispatch,
+      endLoading,
+      filterValue,
+      setFilteredCosts,
+      setCosts,
+      setDate,
+      startLoading,
+    ]
+  )
 
   useEffect(() => {
     getCurrencies(basicCurrency)
-  }, [basicCurrency])
+  }, [basicCurrency, getCurrencies])
   return (
     <>
       <CurrenciesFilter
