@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0c4f802b.css",
+    "main.js": "/static/js/main.92d81816.js",
+    "static/media/loader-gif.gif": "/static/media/loader-gif.803f24369a085e35482e.gif",
+    "static/media/switcherIcon.svg": "/static/media/switcherIcon.284fddb74bd2ac2503a95669ccdf0b94.svg",
+    "index.html": "/index.html",
+    "main.0c4f802b.css.map": "/static/css/main.0c4f802b.css.map",
+    "main.92d81816.js.map": "/static/js/main.92d81816.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c4f802b.css",
+    "static/js/main.92d81816.js"
+  ]
+}
