@@ -1,5 +1,6 @@
-import { ResponseCurrenciesCosts } from '../../types/types'
 import { API } from './axios-instance'
+import { API_KEY } from '../../constants'
+import { ResponseCurrenciesCosts } from '../../types/types'
 
 export const getCostFromTo = async (
   fromCurrency: string,
@@ -8,7 +9,7 @@ export const getCostFromTo = async (
 ): Promise<ResponseCurrenciesCosts> => {
   try {
     const response = await API.get(
-      `convert?api_key=${process.env.REACT_APP_API_KEY}&from=${fromCurrency}&to=${toCurrency}&amount=${amount}&format=json`
+      `convert?api_key=${API_KEY}&from=${fromCurrency}&to=${toCurrency}&amount=${amount}&format=json`
     )
     return response.data
   } catch (error) {
