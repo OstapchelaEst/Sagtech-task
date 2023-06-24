@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CurrenciesList } from '../../components/CurrenciesList'
 import { Error } from '../../components/Error'
 import { LastTimeUpdate } from '../../components/LastTimeUpdate'
