@@ -1,0 +1,23 @@
+@import '../../theme/theme.scss';
+
+.loader-item {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.548);
+  & img {
+    display: block;
+    max-width: 15rem;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  & p {
+    color: $orange;
+    font-size: 4rem;
+  }
+}

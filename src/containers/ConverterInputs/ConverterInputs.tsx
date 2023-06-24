@@ -14,7 +14,7 @@ const RESOURCE_CONVERTER_RESET_BUTTON = 'reset'
 
 export const ConverterInputs = () => {
   const { allCurrencies, basicCurrency } = useAppSelector(
-    (state) => state.currencySlide
+    (state) => state.currencySlice
   )
   const inputRef = useRef<HTMLInputElement>(null)
   const [fromCurrency, setFromCurrency] = useState<string>(basicCurrency)

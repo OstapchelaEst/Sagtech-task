@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
-import currencySlide from './slices/currencySlide'
+import currencySlice from './slices/currencySlice'
+import loaderSlice from './slices/loaderSlice'
 
-export const rootReducer = combineReducers({ currencySlide })
+export const rootReducer = combineReducers({ currencySlice, loaderSlice })
 
 export const setupStore = () => {
   return configureStore({

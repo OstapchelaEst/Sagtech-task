@@ -20,7 +20,7 @@ const initialState: IInitialState = {
   currenciesErrorMessage: '',
 }
 
-export const currencySlide = createSlice({
+export const currencySlice = createSlice({
   name: 'currency-slice',
   initialState,
   reducers: {
@@ -46,4 +46,4 @@ export const currencySlide = createSlice({
   },
 })
 
-export default currencySlide.reducer
+export default currencySlice.reducer
