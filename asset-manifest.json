@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/OstapchelaEst/sagtech-task/static/css/main.0c4f802b.css",
-    "main.js": "/OstapchelaEst/sagtech-task/static/js/main.ebb1ac53.js",
-    "static/media/loader-gif.gif": "/OstapchelaEst/sagtech-task/static/media/loader-gif.803f24369a085e35482e.gif",
-    "static/media/switcherIcon.svg": "/OstapchelaEst/sagtech-task/static/media/switcherIcon.284fddb74bd2ac2503a95669ccdf0b94.svg",
-    "index.html": "/OstapchelaEst/sagtech-task/index.html",
-    "main.0c4f802b.css.map": "/OstapchelaEst/sagtech-task/static/css/main.0c4f802b.css.map",
-    "main.ebb1ac53.js.map": "/OstapchelaEst/sagtech-task/static/js/main.ebb1ac53.js.map"
+    "main.css": "/static/css/main.0c4f802b.css",
+    "main.js": "/static/js/main.4ee32f44.js",
+    "static/media/loader-gif.gif": "/static/media/loader-gif.803f24369a085e35482e.gif",
+    "static/media/switcherIcon.svg": "/static/media/switcherIcon.284fddb74bd2ac2503a95669ccdf0b94.svg",
+    "index.html": "/index.html",
+    "main.0c4f802b.css.map": "/static/css/main.0c4f802b.css.map",
+    "main.4ee32f44.js.map": "/static/js/main.4ee32f44.js.map"
   },
   "entrypoints": [
     "static/css/main.0c4f802b.css",
-    "static/js/main.ebb1ac53.js"
+    "static/js/main.4ee32f44.js"
   ]
 }
