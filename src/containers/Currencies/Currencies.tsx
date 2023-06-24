@@ -9,6 +9,7 @@ import { getValidCurrencyList } from '../../utils/getValidCurrencyList'
 import { ValidCurrenciesList } from '../../types/types'
 import { CurrenciesFilter } from '../CurrenciesFilter'
 import { loaderSlice } from '../../store/slices/loaderSlice'
+import { getFilteredCurrencies } from '../../utils/getFilteredCurrencies'
 import './Currencies.styles.scss'
 
 const RESOURCE_CURRENCIES_ERROR_MESSAGE =
@@ -24,6 +25,8 @@ export const Currencies = () => {
 
   const { startLoading, endLoading } = loaderSlice.actions
   const [costs, setCosts] = useState<ValidCurrenciesList | []>([])
+
+  const [filterValue, setFilterValue] = useState('')
   const [filteredCosts, setFilteredCosts] = useState<ValidCurrenciesList | []>(
     []
   )
@@ -37,7 +40,7 @@ export const Currencies = () => {
       const validCosts = getValidCurrencyList(response.rates)
       setDate(response.updated_date)
       setCosts(validCosts)
-      setFilteredCosts(validCosts)
+      setFilteredCosts(getFilteredCurrencies(validCosts, filterValue))
       dispatch(endLoading())
     } catch (error) {
       dispatch(endLoading())
@@ -53,6 +56,8 @@ export const Currencies = () => {
       <CurrenciesFilter
         setCosts={setFilteredCosts}
         costs={costs}
+        value={filterValue}
+        setValue={setFilterValue}
       />
       <LastTimeUpdate
         data={getReadableDate(date)}
