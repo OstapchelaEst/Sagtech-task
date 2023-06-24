@@ -1,10 +1,18 @@
-import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
+import {
+  ChangeEvent,
+  FormEvent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import { Button } from '../../components/Button'
 import { ConverterInput } from '../../components/ConverterInput'
 import { Error } from '../../components/Error'
 import { Switcher } from '../../components/Switcher'
 import { getCostFromTo } from '../../services/fetch/getCostFromTo'
 import { useAppSelector } from '../../store/hooks'
+import { getValidCurrenciesForConverter } from '../../utils/getValidCurrenciesForConverter'
 import './ConverterInputs.styles.scss'
 
 const RESOURCE_CONVERTER_TITLE_FROM = 'From currency'
@@ -16,6 +24,11 @@ export const ConverterInputs = () => {
   const { allCurrencies, basicCurrency } = useAppSelector(
     (state) => state.currencySlice
   )
+
+  const validCurrencies = useMemo(() => {
+    return getValidCurrenciesForConverter(allCurrencies)
+  }, [allCurrencies])
+
   const inputRef = useRef<HTMLInputElement>(null)
   const [fromCurrency, setFromCurrency] = useState<string>(basicCurrency)
   const [toCurrency, setToCurrency] = useState<string>('USD')
@@ -78,7 +91,7 @@ export const ConverterInputs = () => {
   }
 
   useEffect(() => {
-    (inputRef.current as HTMLInputElement).focus()
+    ;(inputRef.current as HTMLInputElement).focus()
   }, [])
   return (
     <form
@@ -87,7 +100,7 @@ export const ConverterInputs = () => {
     >
       <ConverterInput
         name="fromCurrency"
-        allCurrencies={allCurrencies}
+        allCurrencies={validCurrencies}
         onBlur={onBlurFromCurrentAmount}
         onChange={onChangeFromCurrentAmount}
         onFocus={onFocusFromCurrentAmount}
@@ -103,7 +116,7 @@ export const ConverterInputs = () => {
       </div>
       <ConverterInput
         name="toCurrency"
-        allCurrencies={allCurrencies}
+        allCurrencies={validCurrencies}
         disabled
         title={RESOURCE_CONVERTER_TITLE_TO}
         type="number"

@@ -6,10 +6,8 @@ interface INavigationItem {
   title: string
 }
 
-export const NavigationItem = ({ route, title }: INavigationItem) => {
-  return (
-    <li className="navigation-item">
-      <NavLink to={route}>{title}</NavLink>
-    </li>
-  )
-}
+export const NavigationItem = ({ route, title }: INavigationItem) => (
+  <li className="navigation-item">
+    <NavLink to={route}>{title}</NavLink>
+  </li>
+)

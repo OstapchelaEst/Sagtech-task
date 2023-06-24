@@ -14,23 +14,21 @@ export const ConverterInput = forwardRef<HTMLInputElement, IConverterInput>(
   (
     { selectOnChange, allCurrencies, title, selectValue, ...otherProps },
     ref
-  ) => {
-    return (
-      <>
-        <div className="converter-input__title">{title}</div>
-        <div className="converter-input__wrapper">
-          <input
-            className="converter-input__input"
-            ref={ref}
-            {...otherProps}
-          />
-          <Select
-            onChange={selectOnChange}
-            options={allCurrencies}
-            value={selectValue}
-          />
-        </div>
-      </>
-    )
-  }
+  ) => (
+    <>
+      <div className="converter-input__title">{title}</div>
+      <div className="converter-input__wrapper">
+        <input
+          className="converter-input__input"
+          ref={ref}
+          {...otherProps}
+        />
+        <Select
+          onChange={selectOnChange}
+          options={allCurrencies}
+          value={selectValue}
+        />
+      </div>
+    </>
+  )
 )

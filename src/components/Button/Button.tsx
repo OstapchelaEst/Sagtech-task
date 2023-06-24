@@ -5,13 +5,11 @@ interface IButton extends ComponentPropsWithoutRef<'button'> {
   children: string | ReactNode
 }
 
-export const Button = ({ children, ...otherProps }: IButton) => {
-  return (
-    <button
-      {...otherProps}
-      className="button"
-    >
-      {children}
-    </button>
-  )
-}
+export const Button = ({ children, ...otherProps }: IButton) => (
+  <button
+    {...otherProps}
+    className="button"
+  >
+    {children}
+  </button>
+)

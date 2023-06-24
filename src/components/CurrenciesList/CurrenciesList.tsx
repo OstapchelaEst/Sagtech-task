@@ -6,17 +6,15 @@ interface ICurrenciesList {
   basicCurrency: string
 }
 
-export const CurrenciesList = ({ costs, basicCurrency }: ICurrenciesList) => {
-  return (
-    <ul className="currency-list">
-      {costs.map((item) => (
-        <li
-          key={item.currentCurrency}
-          className="currency-item"
-        >
-          {`1 ${item.currentCurrency} = ${item.cost} ${basicCurrency}`}
-        </li>
-      ))}
-    </ul>
-  )
-}
+export const CurrenciesList = ({ costs, basicCurrency }: ICurrenciesList) => (
+  <ul className="currency-list">
+    {costs.map((item) => (
+      <li
+        key={item.currentCurrency}
+        className="currency-item"
+      >
+        {`1 ${item.currentCurrency} = ${item.cost} ${basicCurrency}`}
+      </li>
+    ))}
+  </ul>
+)
